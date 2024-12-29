@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState, useContext } from 'react';
 
 import { NearContext } from '@/context';
@@ -23,15 +22,9 @@ export const Navigation = () => {
   }, [signedAccountId, wallet]);
 
   return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
-        <Link href="/" passHref legacyBehavior>
-          <Image priority src={NearLogo} alt="NEAR" width="30" height="24" className="d-inline-block align-text-top" />
-        </Link>
-        <div className='navbar-nav pt-1'>
-          <button className="btn btn-secondary" onClick={action} > {label} </button>
-        </div>
-      </div>
+    <nav>
+      <Image priority src={NearLogo} alt="NEAR" width="30" height="24" />
+      <button onClick={action}> {label} </button>
     </nav>
   );
 };

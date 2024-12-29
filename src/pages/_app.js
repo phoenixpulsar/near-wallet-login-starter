@@ -18,8 +18,10 @@ export default function MyApp() {
 
   return (
     <NearContext.Provider value={{ wallet, signedAccountId }}>
-      <Navigation />
-      <h1>Hello NEAR World</h1>
+      <div className="container">
+        <Navigation />
+        <h1>Hello NEAR World</h1>
+      </div>
     </NearContext.Provider>
   );
 }
